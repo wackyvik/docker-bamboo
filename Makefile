@@ -1,5 +1,5 @@
 # Container parameters
-NAME = wackyvik/bamboo
+NAME = larionov/bamboo
 VERSION = $(shell /bin/cat BAMBOO.VERSION)
 JAVA_OPTS = -Djava.io.tmpdir=/var/tmp -XX:-UseAESIntrinsics -Dcom.sun.net.ssl.checkRevocation=false
 MEMORY_LIMIT = 8192
@@ -68,4 +68,4 @@ install:
 						--oom-kill-disable=false                                          \
 						--cpuset-cpus=$(CPU_LIMIT_CPUS) --cpu-quota=$(CPU_LIMIT_LOAD_THP) \
 						--blkio-weight=$(IO_LIMIT)                                        \
-						-d wackyvik/bamboo:$(VERSION)
+						-d larionov/bamboo:$(VERSION)
