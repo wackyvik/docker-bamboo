@@ -1,0 +1,36 @@
+<atlassian-user>
+    <repositories>
+        <hibernate name="Hibernate Repository" key="hibernateRepository" description="Hibernate Repository" cache="true"/>
+        <ldap key="ldapRepository" name="OpenLDAP directory on %LDAP_HOST%" cache="true">
+            <host>%LDAP_HOST%</host>
+            <port>%LDAP_PORT%</port>
+            <securityPrincipal>%LDAP_BIND_DN%</securityPrincipal>
+            <securityCredential>%LDAP_BIND_DN_PW%</securityCredential>
+            <securityProtocol>plain</securityProtocol>
+            <securityAuthentication>simple</securityAuthentication>
+            <baseContext>%LDAP_BASE_DN%</baseContext>
+            <baseUserNamespace>%LDAP_PEOPLE_NS%</baseUserNamespace>
+            <baseGroupNamespace>%LDAP_GROUP_NS%</baseGroupNamespace>
+            <usernameAttribute>%LDAP_USERNAME_ATTR%</usernameAttribute>
+            <userSearchFilter>%LDAP_USERSEARCH_FILTER%</userSearchFilter>            
+            <firstnameAttribute>givenname</firstnameAttribute>
+            <surnameAttribute>sn</surnameAttribute>
+            <emailAttribute>mail</emailAttribute>
+            <groupnameAttribute>cn</groupnameAttribute>
+            <groupSearchFilter>(objectClass=groupOfNames)</groupSearchFilter>
+            <poolingOn>true</poolingOn>
+            <maxSize>0</maxSize>
+            <prefSize>10</prefSize>
+            <debugLevel>none</debugLevel>
+            <authentication>simple</authentication>
+            <timeout>0</timeout>
+            <initialContextFactory>com.sun.jndi.ldap.LdapCtxFactory</initialContextFactory>
+            <batchSize>100</batchSize>
+            <timeToLive>0</timeToLive>
+            <userSearchAllDepths>true</userSearchAllDepths>
+            <groupSearchAllDepths>true</groupSearchAllDepths>
+            <membershipAttribute>member</membershipAttribute>
+            <initSize>20</initSize>
+        </ldap>
+    </repositories>
+</atlassian-user>
